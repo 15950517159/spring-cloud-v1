@@ -24,7 +24,7 @@
         <spring-cloud.version>Hoxton.SR8</spring-cloud.version>
         <spring-cloud-alibaba.version>2.2.5.RELEASE</spring-cloud-alibaba.version>
         <druid.version>1.2.16</druid.version>
-        <!--        <mysql.version>8.0.33</mysql.version>-->
+        <mysql.version>8.0.33</mysql.version>
         <mybatis-plus-starter.version>3.1.2</mybatis-plus-starter.version>
         <spring-boot-dependencies.version>2.3.7.RELEASE</spring-boot-dependencies.version>
         <ncacos.version>2.1.1.RELEASE</ncacos.version>
