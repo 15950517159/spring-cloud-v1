@@ -1,0 +1,43 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: userserver
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/ruoyi?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=UTC
+    username: root
+    password: 123456
+
+mybatis-plus:
+  # 指定 Mapper XML 文件的位置，使用 classpath 通配符指定路径
+  mapper-locations: classpath:/mapper/**/*.xml
+  # 指定实体类的包路径，用于自动扫描并注册类型别名
+  type-aliases-package: com.demo.domain
+  global-config:
+    db-config:
+      id-type: input
+      # 驼峰下划线转换（将数据库字段的下划线命名规则转换为 Java 实体类属性的驼峰命名规则）
+      db-column-underline: true
+      # 刷新 mapper
+      refresh-mapper: true
+  configuration:
+    # 将 Java 实体类属性的驼峰命名规则转换为数据库字段的下划线命名规则
+    map-underscore-to-camel-case: true
+    # 查询结果中包含空值的列，在映射的时候，不会映射这个字段
+    call-setters-on-nulls: true
+    # 开启 sql 日志
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    # 关闭 sql 日志
+    # log-impl: org.apache.ibatis.logging.nologging.NoLoggingImpl
+
+# 启动nacos：C:\E\tools\nacos-server-2.3.2
+# startup.cmd -m standalone
+#eureka:
+#  client:
+#    service-url:
+#      defaultZone: http://127.0.0.1:10086/eureka/
